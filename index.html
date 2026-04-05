@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Núkk Shop</title>
+
+<meta name="description" content="Núkk Shop SxC Apps">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Núkk Shop SxC Apps">
+<meta property="og:description" content="Núkk Shop SxC Apps">
+<meta property="og:image" content="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1775379692464-nrc6budj.jpg">
+<meta property="og:image:secure_url" content="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1775379692464-nrc6budj.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Núkk Shop">
+<meta name="twitter:description" content="Núkk Shop SxC Apps!">
+<meta name="twitter:image" content="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1775379692464-nrc6budj.jpg">
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="icon" href="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1775379692464-nrc6budj.jpg">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#fff1f1;
+  color:#3b0a0a;
+}
+
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  padding:14px;
+  display:flex;
+  justify-content:center;
+}
+
+.header-center{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+  font-size:18px;
+  color:#dc2626;
+}
+
+.cart-svg{
+  width:22px;
+  height:22px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.cart-svg:hover{
+  stroke:#991b1b;
+  fill:#991b1b;
+}
+
+.banner{
+  width:100%;
+  height:auto; /* 🔥 ganti ini */
+  
+  border:1px solid #dc2626;
+  border-radius:0 0 20px 20px;
+
+  overflow:hidden;
+
+  display:block; /* opsional */
+}
+
+.banner img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+.container{
+  padding:15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+
+  margin-top:-60px; 
+  position:relative;
+  z-index:2;
+}
+
+.banner{
+  position:relative;
+  z-index:1;
+  margin-bottom:20px;
+}
+
+
+.card{
+  position:relative; /* WAJIB supaya badge nempel ke card */
+  background:white;
+  border-radius:16px;
+
+  padding:28px 12px 12px 12px; /* ⬅️ ini kuncinya (atas diperbesar) */
+
+  text-align:center;
+  box-shadow:0 8px 20px rgba(220,38,38,0.1);
+  transition:0.25s;
+  border:1px solid rgba(220,38,38,0.1);
+}
+
+.badge{
+  position:absolute;
+  top:-6px;
+  right:10px;
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 12px 25px rgba(37,99,235,0.15);
+}
+
+.card img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:8px;
+}
+
+
+.nama{
+  font-size:14px;
+  font-weight:500;
+}
+
+.harga{
+  color:#dc2626;
+  font-weight:600;
+  margin-top:3px;
+}
+
+
+.btn{
+  margin-top:10px;
+  background:linear-gradient(135deg,#dc2626,#f87171);
+  color:white;
+  padding:8px;
+  border-radius:10px;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.btn:hover{
+  opacity:0.9;
+  box-shadow:0 6px 15px rgba(220,38,38,0.4);
+}
+
+
+.section-title{
+  font-size:18px;
+  font-weight:600;
+  color:#7f1d1d;
+}
+
+.section-desc{
+  font-size:13px;
+  color:#64748b;
+  margin-top:2px;
+}
+
+.section-line{
+  height:3px;
+  width:50px;
+  background:linear-gradient(90deg,#dc2626,#f87171);
+  border-radius:10px;
+  margin:8px 0 15px;
+}
+
+.section{
+  grid-column:1/-1;
+}
+
+
+.grid-produk{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+}
+
+.btn:active{
+  transform:scale(0.95);
+}
+
+.info-box{
+  background:#ffe4e6;
+  border:1px solid #fecaca;
+  color:#991b1b;
+  font-size:12px;
+  padding:8px;
+  border-radius:10px;
+  margin-top:6px;
+  text-align:left;
+}
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:#1e293b;
+  font-weight:500;
+  padding:20px 10px;
+  margin-top:20px;
+  border-top:1px solid rgba(0,0,0,0.05);
+  text-shadow:0 1px 2px rgba(0,0,0,0.1);
+  position:relative;
+  z-index:5;
+}
+
+.info-title{
+  font-weight:600;
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.info-text{
+  font-size:12px;
+}
+
+.slider{
+  display:flex;
+  height:100%;
+  transition:0.5s ease;
+  will-change: transform;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.btn{
+  margin-top:10px;
+  background:linear-gradient(135deg,#ef4444,#f87171);
+  color:white;
+  padding:8px;
+  border-radius:10px;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.2s;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
+.btn svg{
+  width:16px;
+  height:16px;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 15px rgba(59,130,246,0.4);
+}
+
+.header-center{
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center; 
+}
+
+.brand-top{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:18px;
+  font-weight:600;
+  color:#dc2626;
+}
+
+.brand-bottom{
+  display:flex;
+  align-items:center;   
+  justify-content:center;
+  gap:6px;
+
+  font-size:18px;
+  font-weight:600;
+  color:#dc2626;
+
+  margin-top:2px;
+}
+
+.server-svg{
+  width:18px;
+  height:18px;
+  position:relative;
+  top:-1px; 
+}
+
+.brand-bottom:hover .server-svg{
+  transform:scale(1.15);
+}
+
+.logo-svg{
+  width:18px;
+  height:18px;
+}
+
+.brand-bottom{
+  margin-top:2px;
+}
+
+
+.hamburger{
+  position:absolute;
+  left:15px;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:42px;
+  height:42px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(12px);
+
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.4);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  cursor:pointer;
+  z-index:200;
+
+  transition:0.3s cubic-bezier(.4,0,.2,1);
+}
+
+
+.hamburger:hover{
+  transform:translateY(-50%) scale(1.06);
+  box-shadow:
+    0 12px 25px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+
+.hamburger span{
+  display:block;
+  height:2.5px;
+  width:18px;
+  background:#dc2626;
+  border-radius:10px;
+  transition:0.4s cubic-bezier(.4,0,.2,1);
+}
+
+
+.hamburger.active span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+  transform:scale(0);
+}
+
+.hamburger.active span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+
+.menu {
+  position: absolute;
+  top: 70px;
+  left: 5px;
+  background: rgba(220, 38, 38, 0.2);
+  box-shadow:
+    0 20px 60px rgba(220, 38, 38, 0.4);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  width: max-content;
+  
+  /* 🔥 SUPER BLUR */
+  background: rgba(37, 99, 235, 0.15);
+  backdrop-filter: blur(60px) saturate(200%);
+  -webkit-backdrop-filter: blur(60px) saturate(200%);
+  
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  
+  box-shadow:
+    0 20px 60px rgba(37, 99, 235, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  
+  opacity: 0;
+  transform: translateY(-12px) scale(0.95);
+  pointer-events: none;
+  
+  transition: 0.35s cubic-bezier(.4, 0, .2, 1);
+  z-index: 150;
+}
+
+.menu::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(80px);
+  -webkit-backdrop-filter:blur(80px);
+
+  z-index:-1;
+}
+
+
+.menu.active{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+
+
+.menu-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:10px 16px;
+
+  border-radius:12px;
+
+  font-size:14px;
+  font-weight:500;
+
+  text-decoration:none;
+  color:white;
+
+  white-space:nowrap;
+
+  transition:0.25s cubic-bezier(.4,0,.2,1);
+}
+
+
+.menu-btn.wa{
+  background:linear-gradient(135deg,#25D366,#1ebe5d);
+}
+
+
+.menu-btn.tg{
+  background:linear-gradient(135deg,#229ED9,#1d8cc7);
+}
+
+
+.menu-btn svg{
+  width:18px;
+  height:18px;
+}
+
+
+.menu-btn:hover{
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+.menu-btn:active{
+  transform:scale(0.96);
+}
+
+.menu-btn.tg svg,
+.telegram-icon {
+  width:14px;  
+  height:14px; 
+  vertical-align:middle; 
+}
+
+.scroll-hint{
+  text-align:center;
+  font-size:13px;
+  color:#dc2626;
+  margin:10px 0;
+
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(6px); }
+}
+
+.container{
+  padding:15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+
+  margin-top:10px; 
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:60px;
+
+  background:linear-gradient(to top, #eef4ff, transparent);
+  pointer-events:none;
+}
+
+.scroll-hint{
+  will-change: opacity, transform;
+  text-align:center;
+  font-size:13px;
+  color:#dc2626;
+  margin:10px 0;
+
+  animation: bounce 1.5s infinite;
+
+  opacity:1;
+  transform:translateY(0);
+
+  transition:
+    opacity 1s cubic-bezier(.22,1,.36,1),
+    transform 1s cubic-bezier(.22,1,.36,1);
+}
+
+
+#loading-screen{
+  position:fixed;
+  inset:0;
+  background:#eef4ff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+
+.loader{
+  width:50px;
+  height:50px;
+  border:4px solid rgba(220,38,38,0.2);
+  border-top:4px solid #dc2626;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin-bottom:15px;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+
+.loading-text{
+  font-size:16px;
+  color:#dc2626;
+  font-weight:500;
+  letter-spacing:1px;
+}
+
+
+#welcome-screen{
+  position:fixed;
+  inset:0;
+  background:#eef4ff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9998;
+
+  opacity:0;
+  pointer-events:none;
+  transition:0.5s;
+}
+
+#welcome-screen.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+#welcome-text{
+  font-size:28px;
+  font-weight:600;
+  color:#dc2626;
+  letter-spacing:2px;
+}
+
+.info-text{
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* 🔥 BLUR BACKGROUND */
+#blurOverlay{
+  position:fixed;
+  inset:0;
+  backdrop-filter:blur(8px);
+  background:rgba(0,0,0,0.3);
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:0.4s ease;
+  z-index:90;
+}
+
+#blurOverlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* 🔥 IKLAN */
+.ads-box{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-60%) scale(0.9);
+
+  width:90%;
+  max-width:340px;
+
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  z-index:100;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition: all 0.4s cubic-bezier(.22,1,.36,1);
+}
+
+/* 🔥 AKTIF */
+.ads-box.show{
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+  pointer-events:auto;
+}
+
+.ads-box img{
+  width:100%;
+  height:auto; /* biar tidak kepotong */
+  display:block;
+}
+
+/* isi */
+.ads-content{
+  padding:12px;
+  text-align:center;
+}
+
+.ads-title{
+  font-weight:600;
+  font-size:15px;
+  color:red;
+}
+
+.card.premium{
+  border:1px solid #ef4444;
+  box-shadow:0 0 25px rgba(239,68,68,0.5);
+}
+
+.ads-desc{
+  font-size:12px;
+  color:#64748b;
+  margin-top:5px;
+}
+
+/* tombol */
+.ads-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  margin-top:10px;
+  background:linear-gradient(135deg,black,red);
+  color:white;
+  padding:10px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:500;
+
+  transition:0.25s;
+}
+
+/* ukuran svg */
+.ads-btn svg{
+  width:15px;
+  height:15px;
+}
+
+/* efek hover */
+.ads-btn:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 8px 20px rgba(37,211,102,0.5);
+}
+
+/* tombol X */
+.ads-close{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:28px;
+  height:28px;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+/* animasi */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translate(-50%,-60%);
+  }
+  to{
+    opacity:1;
+    transform:translate(-50%,-50%);
+  }
+}
+
+.card.premium{
+  border:1px solid red;
+  box-shadow:0 0 20px rgba(239,68,68,0.4);
+}
+</style>
+</head>
+
+<body>
+
+
+<div id="loading-screen">
+  <div class="loader"></div>
+  <div class="loading-text">
+    Loading<span id="dots"></span>
+  </div>
+</div>
+
+
+<div id="welcome-screen">
+  <h1 id="welcome-text"></h1>
+</div>
+
+<header class="header">
+  <div class="header-center">
+
+  
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  
+  <div class="menu" id="menu">
+    
+  <!-- Isi Dengan Nomor WhatsApp Kamu -->
+<a href="https://whatsapp.com/channel/0029Vb6hL9pGufJ38JTojQ3e/992" target="_blank" class="menu-btn wa">
+  <svg viewBox="0 0 32 32">
+    <path fill="#ffffff" d="M16.001 3C9.373 3 4 8.373 4 15.001c0 2.648.773 5.095 2.104 7.164L4 29l7.041-2.071a11.94 11.94 0 004.96 1.072C22.629 28 28 22.628 28 16.001 28 9.373 22.629 3 16.001 3zm0 22.693a9.683 9.683 0 01-4.928-1.354l-.354-.21-4.178 1.23 1.239-4.076-.231-.366A9.68 9.68 0 016.32 15c0-5.35 4.332-9.68 9.68-9.68 5.35 0 9.68 4.33 9.68 9.68 0 5.349-4.33 9.693-9.68 9.693zm5.317-7.283c-.29-.145-1.717-.851-1.982-.948-.266-.099-.459-.145-.65.145-.19.29-.748.947-.917 1.139-.17.192-.338.217-.628.073-.29-.145-1.226-.451-2.335-1.437-.862-.769-1.442-1.719-1.612-2.009-.17-.289-.018-.445.128-.589.132-.132.29-.338.436-.507.145-.17.193-.289.29-.482.099-.192.049-.362-.025-.507-.073-.145-.65-1.566-.891-2.145-.234-.561-.471-.485-.65-.495l-.554-.01c-.192 0-.507.073-.774.362-.266.29-1.016.992-1.016 2.414s1.04 2.8 1.183 2.992c.145.193 2.044 3.12 4.949 4.378.692.298 1.231.476 1.65.61.693.22 1.323.189 1.821.115.556-.083 1.717-.7 1.96-1.377.242-.677.242-1.257.17-1.377-.073-.119-.266-.19-.556-.334z"/>
+  </svg>
+  Channel WhatsApp
+</a>
+
+<!-- Isi Dengan User Name Telegram Kamu -->
+<a href="https://t.me/NyXuQi" target="_blank" class="menu-btn tg">
+  <svg class="telegram-icon" viewBox="0 0 24 24">
+    <path fill="white" d="M9.04 15.54l-.39 5.46c.56 0 .8-.24 1.09-.52l2.61-2.5 5.41 3.96c.99.55 1.69.26 1.95-.92l3.54-16.6c.34-1.54-.56-2.14-1.52-1.78L1.7 9.29c-1.49.58-1.47 1.41-.25 1.79l5.1 1.59L18.27 5.5c.55-.34 1.05-.15.64.19"/>
+  </svg>
+  Contact Telegram
+</a>
+
+  </div>
+
+  <div class="header-center">
+
+    <div class="brand">
+      
+      <div class="brand-top">
+        Núkk Shop
+        <svg class="logo-svg" viewBox="0 0 24 24" fill="none">
+          <path d="M6 6H21L19 14H8L6 6Z" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="20" r="1.5" fill="#dc2626"/>
+          <circle cx="18" cy="20" r="1.5" fill="#dc2626"/>
+          <path d="M6 6L5 3H2" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+<div class="brand-bottom">
+  SxC Apps
+
+  <svg class="server-svg" viewBox="-146 129 218 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#dc2626">
+      <path d="M-2.9,150.4l2.8-4.2l2.8-4.1l6.2-9.3c0.8-1.1,0.5-2.7-0.7-3.4c-1.1-0.8-2.7-0.5-3.4,0.7l-6.6,9.9l-2.8,4.2l-2.8,4.2
+        c-9-3.5-18.9-5.4-29.5-5.4c-10.5,0-20.5,1.9-29.5,5.4l-2.8-4.2L-72,140l-6.6-9.9c-0.8-1.1-2.3-1.4-3.4-0.7
+        c-1.1,0.8-1.4,2.3-0.7,3.4l6.2,9.3l2.8,4.1l2.8,4.2c-21,9.8-35.3,28.3-35.3,49.6H32.5C32.4,178.7,18.2,160.2-2.9,150.4z
+        M-66.7,180.1c-4.1,0-7.4-3.3-7.4-7.4c0-4.1,3.3-7.4,7.4-7.4c4.1,0,7.4,3.3,7.4,7.4S-62.6,180.1-66.7,180.1z M-7.3,180.1
+        c-4.1,0-7.4-3.3-7.4-7.4c0-4.1,3.3-7.4,7.4-7.4c4.1,0,7.4,3.3,7.4,7.4C0.2,176.8-3.1,180.1-7.3,180.1z"/>
+      <path d="M-105.3,209.8l-1.1,0.1v12.3v10.1v86.6c0,8.7,7,15.7,15.7,15.7h11.3c-0.4,1.3-0.6,2.7-0.6,4.1v0.8v5v25.6
+        c0,8.2,6.7,14.9,14.9,14.9s14.9-6.7,14.9-14.9v-25.6v-5v-0.8c0-1.4-0.2-2.8-0.6-4.1h27.6c-0.4,1.3-0.6,2.7-0.6,4.1v0.8v5v25.6
+        c0,8.2,6.7,14.9,14.9,14.9c8.2,0,14.9-6.7,14.9-14.9v-25.6v-5v-0.8c0-1.4-0.2-2.8-0.6-4.1h11.3c8.7,0,15.7-7,15.7-15.7v-86.6v-10.1
+        v-12.4h-1.1H-105.3z"/>
+      <path d="M-131.1,209.9c-8.2,0-14.9,6.7-14.9,14.9v63.6c0,8.2,6.7,14.9,14.9,14.9c8.2,0,14.9-6.7,14.9-14.9v-63.6
+        C-116.3,216.5-122.9,209.9-131.1,209.9z"/>
+      <path d="M57.2,209.9c-8.2,0-14.9,6.7-14.9,14.9v63.6c0,8.2,6.7,14.9,14.9,14.9s14.9-6.7,14.9-14.9v-63.6
+        C72,216.5,65.4,209.9,57.2,209.9z"/>
+    </g>
+  </svg>
+</div>
+
+    </div>
+
+  </div>
+</header>
+
+<!-- 🔥 BLUR OVERLAY -->
+<div id="blurOverlay"></div>
+
+<!-- 🔥 IKLAN -->
+<div class="ads-box" id="adsBox">
+
+  <div class="ads-close" onclick="closeAds()">✕</div>
+
+  <img src="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1775379692464-nrc6budj.jpg">
+
+  <div class="ads-content">
+    <div class="ads-title">Channel WhatsApp</div>
+
+    <div class="ads-desc">
+      Gabung ke Channel WhatsApp kami sekarang!<br>
+      Dapatkan update terbaru dan info penting<br>
+      Jangan sampai ketinggalan
+    </div>
+
+    <a href="https://whatsapp.com/channel/0029Vb6hL9pGufJ38JTojQ3e" target="_blank" class="ads-btn">
+      
+      <!-- ICON WHATSAPP -->
+      <svg viewBox="0 0 24 24" width="20" height="20">
+        <path fill="white" d="M20.52 3.48A11.77 11.77 0 0 0 12.05 0C5.41 0 .02 5.39 0 12.03c0 2.12.56 4.19 1.62 6.01L0 24l6.14-1.6a11.94 11.94 0 0 0 5.9 1.5h.01c6.63 0 12.02-5.39 12.02-12.03 0-3.21-1.25-6.22-3.55-8.39zM12.06 21.9c-1.81 0-3.58-.49-5.13-1.41l-.37-.22-3.64.95.97-3.55-.24-.36a9.86 9.86 0 0 1-1.52-5.28c0-5.46 4.44-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.87 9.9zm5.45-7.37c-.3-.15-1.78-.88-2.06-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.71.22 1.35.19 1.86.11.57-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.08-.13-.27-.2-.57-.35z"/>
+      </svg>
+
+      Gabung Channel
+    </a>
+  </div>
+
+</div>
+
+<div class="banner">
+  <img src="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1775379692464-nrc6budj.jpg">
+</div>
+</div>
+
+
+
+<div class="container" id="produk"></div>
+<footer class="footer">
+  © 2026 | Powered By NúkkEásy
+</footer>
+
+<script>
+const nomor = "085657031392" //Nomor WhatsApp
+
+const data = [
+  {nama:"SxC Apps 1 Bulan",harga:20000,kategori:"makanan",img:""},
+  
+  {nama:"Reseller SxC Apps",harga:45000,kategori:"minuman",img:""},
+
+  {nama:"Vvip SxC Apps",harga:50000,kategori:"minuman",img:""},
+  
+  {nama:"Owner SxC Apps",harga:65000,kategori:"minuman",img:""},
+  
+  {nama:"Elite SxC Apps",harga:80000,kategori:"minuman",img:""},
+  
+    {nama:"Tangan Kanan SxC Apps",harga:100000,kategori:"minuman",img:""},
+    
+    {nama:"Vanguard SxC Apps",harga:120000,kategori:"minuman",img:""},
+    
+    {nama:"Founder Dev SxC Apps",harga:150000,kategori:"minuman",img:""},
+  
+  {nama:"SxC Apps Permanen",harga:30000,kategori:"makanan",img:""},
+]
+
+let kategoriAktif = "all"
+
+// ================== PREMIUM SYSTEM ==================
+const premiumConfig = {
+  "Founder Dev SxC Apps": "BEST"
+}
+
+function createBadge(text) {
+  if (!text) return ""
+  
+  return `
+  <div style="
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:linear-gradient(135deg,#dc2626,#ef4444);
+    color:white;
+    font-size:10px;
+    padding:4px 7px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+    box-shadow:0 4px 10px rgba(239,68,68,0.4);
+  ">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="white">
+      <path d="M12,2 C16.418278,2 20,5.581722 20,10 C20,12.5480905 18.8087155,14.8179415 16.9527141,16.2829857 L17.0007001,22.2453233 C17.0007001,22.7945586 16.4297842,23.157512 15.9324488,22.9244522 L12.0005291,21.0818879 L8.07069102,22.9243915 C7.5733438,23.1575726 7.00231009,22.7946207 7.00231009,22.2453233 L7.00069412,16.2459273 C5.1725143,14.7820178 4,12.5279366 4,10 C4,5.581722 7.581722,2 12,2 Z"/>
+    </svg>
+    ${text}
+  </div>`
+}
+
+// ================== RENDER PRODUCT ==================
+function tampilProduk() {
+  const container = document.getElementById("produk")
+  container.innerHTML = ""
+  
+  const filtered = data.filter(p =>
+    kategoriAktif === "all" || p.kategori === kategoriAktif
+  )
+  
+  if (kategoriAktif === "all") {
+    
+    container.innerHTML += `
+      <div class="section reveal">
+        <div class="section-title">Price SxC Apps</div>
+        <div class="section-desc">Pilih Durasi App Sesuai Kebutuhanmu.</div>
+        <div class="section-line"></div>
+        <div class="grid-produk" id="makanan"></div>
+      </div>
+    `
+    
+    const makanan = document.getElementById("makanan")
+    
+    filtered.filter(p => p.kategori === "makanan")
+      .forEach(p => {
+        makanan.innerHTML += cardHTML(p)
+      })
+    
+    container.innerHTML += `
+      <div class="section">
+        <div class="section-title">All Role SxC Apps</div>
+        <div class="section-desc">Berbagai Role SxC Siap Dipilih.</div>
+        <div class="section-line"></div>
+        <div class="grid-produk" id="minuman"></div>
+      </div>
+    `
+    
+    const minuman = document.getElementById("minuman")
+    
+    filtered.filter(p => p.kategori === "minuman")
+      .forEach(p => {
+        minuman.innerHTML += cardHTML(p)
+      })
+    
+  } else {
+    filtered.forEach(p => {
+      container.innerHTML += cardHTML(p)
+    })
+  }
+}
+
+// ================== CARD ==================
+function cardHTML(p) {
+  
+  let premiumClass = ""
+  let badge = ""
+  
+  const badgeText = premiumConfig[p.nama]
+  
+  if (badgeText) {
+    premiumClass = "premium"
+    badge = createBadge(badgeText)
+  }
+  
+  return `
+  <div class="reveal">
+    <div class="card ${premiumClass}" style="position:relative;">
+      ${badge}
+
+      <div class="nama">${p.nama}</div>
+      <div class="harga">Rp ${p.harga.toLocaleString("id-ID")}</div>
+
+      <div class="btn" onclick="orderTelegram('${p.nama}',${p.harga})">
+        Order
+      </div>
+    </div>
+  </div>`
+}
+
+// ================== ORDER ==================
+function orderTelegram(nama, harga) {
+  const username = "NyXuQi"
+  const formatHarga = harga.toLocaleString("id-ID")
+  
+  let label = "Produk"
+  
+  const roleList = [
+    "Owner", "Reseller", "Vvip", "Elite", "Founder", "Vanguard", "Tangan Kanan", "Ceo"
+  ]
+  
+  const isRole = roleList.some(role =>
+    nama.toLowerCase().includes(role.toLowerCase())
+  )
+  
+  if (isRole) label = "Role"
+  
+  const pesan = `Halo Admin 👋
+Saya mau order
+${label} : ${nama}
+Harga : Rp${formatHarga}
+
+Mohon diproses ya 🙏`
+  
+  window.open(`https://t.me/${username}?text=${encodeURIComponent(pesan)}`)
+}
+
+
+tampilProduk()
+
+revealOnScroll() // 🔥 INI YANG HARUS KAMU TAMBAH
+
+
+
+function revealOnScroll(){
+  const reveals = document.querySelectorAll(".reveal")
+
+  reveals.forEach(el=>{
+    const windowHeight = window.innerHeight
+    const elementTop = el.getBoundingClientRect().top
+    const visiblePoint = 100
+
+    if(elementTop < windowHeight - visiblePoint){
+      el.classList.add("active")
+    }
+  })
+}
+
+window.addEventListener("scroll", revealOnScroll)
+window.addEventListener("load", revealOnScroll)
+window.addEventListener("scroll", ()=>{
+  const scroll = window.scrollY
+  const banner = document.querySelector(".banner")
+
+  banner.style.transform = `translateY(${scroll * 0.2}px)`
+})
+
+
+const hamburger = document.getElementById("hamburger")
+const menu = document.getElementById("menu")
+
+hamburger.addEventListener("click", ()=>{
+  hamburger.classList.toggle("active")
+  menu.classList.toggle("active")
+})
+
+window.addEventListener("load", ()=>{
+  setTimeout(()=>{
+    window.scrollTo({
+      top: 120,
+      behavior: "smooth"
+    })
+  }, 800)
+})
+
+const scrollHint = document.querySelector(".scroll-hint")
+let sudahScroll = false
+
+window.addEventListener("scroll", () => {
+  if(!sudahScroll && window.scrollY > 100){
+    sudahScroll = true
+
+    scrollHint.style.opacity = "0"
+    scrollHint.style.transform = "translateY(-20px) scale(0.95)"
+
+    setTimeout(()=>{
+      scrollHint.style.display = "none"
+    }, 1000) 
+  }
+})
+
+
+const dots = document.getElementById("dots")
+let dotCount = 0
+
+setInterval(()=>{
+  dotCount = (dotCount + 1) % 4
+  dots.textContent = ".".repeat(dotCount)
+}, 400)
+
+
+
+window.addEventListener("load", ()=>{
+  setTimeout(()=>{
+    
+    document.getElementById("loading-screen").style.display = "none"
+
+    const welcome = document.getElementById("welcome-screen")
+    welcome.classList.add("show")
+
+    // 🔥 TAMBAHKAN INI
+    setTimeout(() => {
+      showAds()
+    }, 2000)
+
+    const text = "Welcome To Núkk Shop"
+    const target = document.getElementById("welcome-text")
+    let i = 0
+
+    function ketik(){
+      if(i < text.length){
+        target.textContent += text[i]
+        i++
+        setTimeout(ketik, 120)
+      } else {
+
+        setTimeout(()=>{
+          welcome.style.opacity = "0"
+          setTimeout(()=>{
+            welcome.style.display = "none"
+          }, 500)
+        }, 1000)
+      }
+    }
+
+    ketik()
+
+  }, 1500) 
+})
+
+function closeAds(){
+  const ads = document.getElementById("adsBox")
+  const blur = document.getElementById("blurOverlay")
+
+  ads.classList.remove("show")
+  blur.classList.remove("show")
+
+  setTimeout(()=>{
+    ads.style.display = "none"
+    blur.style.display = "none"
+  },400)
+}
+
+function showAds(){
+  const ads = document.getElementById("adsBox")
+  const blur = document.getElementById("blurOverlay")
+
+  ads.style.display = "block"
+  blur.style.display = "block"
+
+  setTimeout(()=>{
+    ads.classList.add("show")
+    blur.classList.add("show")
+  },50)
+}
+
+</script>
+
+</body>
+</html>
